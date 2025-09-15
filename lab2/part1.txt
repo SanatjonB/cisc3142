@@ -1,0 +1,21 @@
+You are given this input:
+78 86 18 #42 &
+Variables: int x, y, z; char ch;
+Answer the following separately (reset input each time). What values are assigned to x, y, z, ch?
+a)
+cin >> x >> y >> z >> ch;
+x = 78 y=86 z=18 ch=#
+b)
+cin >> ch >> x >> y >> z;
+ch=7 x=8 y=86 z=18
+c)
+cin >> x;
+cin.get(ch);
+cin >> y >> z;
+x = 78, ch=_, y=86, z=18
+d)
+cin >> x >> ch >> y >> z;
+cin.get(ch);
+
+x=78,ch=8,y=86,z=18
+ch=_

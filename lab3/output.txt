@@ -1,0 +1,5 @@
+ID: 101 | Name: Alice Brown  | Score: 87 | Grade: B | Status: Pass
+ID: 102 | Name: David Green  | Score: 45 | Grade: F | Status: Fail
+ID: 103 | Name: Maria White  | Score: 72 | Grade: C | Status: Pass
+ID: 104 | Name: John Black  | Score: 91 | Grade: A | Status: Pass
+ID: 105 | Name: Emma Stone  | Score: 66 | Grade: D | Status: Pass

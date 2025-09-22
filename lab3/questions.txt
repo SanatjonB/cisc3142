@@ -1,0 +1,74 @@
+1)	Write a program that prompts the user to input an integer between 0 and 35. If the number is less than or equal to 9, the program should output the number; otherwise, it should output A for 10, B for 11, C for 12,..., and Z for 35. (Hint: Use the cast operator, static_cast<char>(), for numbers >= 10.)
+
+#include <iostream>
+using namespace std;
+int main() {
+    int num;
+    cout  << "Enter an integer between 0 and 35: ";
+    cin >>  num;
+    if (num <= 9) {
+        cout << "Output: " << num << endl;
+    } 
+    else {
+        char result = static_cast<char>('A' + (num - 10));
+        cout << result << endl;
+    }
+
+    return 0;
+}
+// I did not check if the user inputs invalid you told me not to
+
+2)	The cost of renting a room at a hotel is, say $100.00 per night. 
+
+•	For special occasions, such as a wedding or conference, the hotel offers a special discount as follows: If the number of rooms booked is at least 10, the discount is 10%; at least 20, the discount is 20%; and at least 30, the discount is 30%. Also if rooms are booked for at least three days, then there is an additional 5% discount. 
+
+Write a program that prompts the user to enter the cost of renting one room, the number of rooms booked, the number of days the rooms are booked, and the sales tax (as a percent). 
+
+The program outputs the cost of renting one room, the discount on each room as a percent, the number of rooms booked, the number of days the rooms are booked, the total cost of the rooms, the sales tax, and the total billing amount. Your program must use appropriate named constants to store special values such as various discounts.
+
+
+3)	Student Grade Report System
+Read data from a text file called students.txt.
+•	Each line of the file contains:
+	ID FirstName LastName Score
+
+Example:
+
+101 Alice Brown 87
+102 David Green 45
+103 Maria White 72
+104 John Black 91
+105 Emma Stone 66
+
+
+
+
+
+•	Process each student’s score:
+•	Use an if statement to check whether the student passed or failed.
+•	Passing = 60 and above
+•	Failing = below 60
+•	Use a switch-case to assign a letter grade based on the score:
+•	90–100 → A
+•	80–89 → B
+•	70–79 → C
+•	60–69 → D
+•	< 60 → F
+•	Output requirements:
+Print a formatted report to the console like this:
+ID: 101 | Name: Alice Brown | Score: 87 | Grade: B | Status: Pass
+ID: 102 | Name: David Green | Score: 45 | Grade: F | Status: Fail
+…
+
+Expected Output
+ID: 101 | Name: Alice Brown | Score: 87 | Grade: B | Status: Pass
+ID: 102 | Name: David Green | Score: 45 | Grade: F | Status: Fail
+ID: 103 | Name: Maria White | Score: 72 | Grade: C | Status: Pass
+ID: 104 | Name: John Black | Score: 91 | Grade: A | Status: Pass
+ID: 105 | Name: Emma Stone | Score: 66 | Grade: D | Status: Pass
+
+Report has been saved to Report.txt 
+
+
+•	Save output into another file “Report.txt”
+

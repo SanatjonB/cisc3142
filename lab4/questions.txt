@@ -1,0 +1,42 @@
+	Write a loop that takes whole numbers from the user and sums them until user enters an invalid input (input failure). Prompt the sum at the end. 
+
+
+
+	Write a program that prints first n Fibonacci numbers. ( User enters the value of n)
+
+
+
+	Redo question-1. Write a loop that takes whole numbers from the user and sums them until user enters an invalid input (input failure). If user enters a negative value, do not add that negative value to sum. Prompt the sum at the end. (use continue)
+
+
+
+
+	The population of town A is less than the population of town B. However, the population of town A is growing faster than the population of town B. Write a program that prompts the user to enter the population and growth rate of each town. The program outputs after how many years the population of town A will be greater than or equal to the population of town B and the populations of both the towns at that time. (A sample input is: Population of town ‍A= 5000, growth rate of town ‍A=4% , population of town ‍B = 8000, and growth rate of town ‍B = 2%).
+
+
+	The value of natural number e can be approximated using the following expression:
+
+2+1/2!+1/3!+⋯+1/n!,
+
+where n is a positive integer. Write a program that uses this formula to approximate the value of e. Test your program for ‍n = 4,8,10 and 12
+
+
+
+	Write a function that checks if given a string is a palindrome or not. 
+(Note: String characters can be accessed by using index numbers. 
+i.e. if string str = “Hello”, then str[0] is H, str[1] is e, str[2] is l, …. 
+Hint: include <string> to use str.length() function to get string length)
+
+
+Function prototype is given below:
+
+
+bool isPalindrome (string str); 
+
+
+
+
+	Write a function, reverseDigit, that takes an integer as a parameter and changes the number with its digits reversed. For example, the value of reverseDigit(12345) is 54321; the value of reverseDigit(5600) is 65; the value of reverseDigit(7008) is 8007; and the value of reverseDigit(-532) is -235. Function does not return a value. It changes the actual parameter.
+
+
+

@@ -1,0 +1,44 @@
+1)	Create a function that looks for a specific value in an array. If the value is found in the array, the function should return the index number where it is located. If the value is not found in the array, the function should return -1. Call the method inside main function by passing an array and all other necessary arguments.
+
+Sample method signature : int seqSearch(const int list[], int listLength, int searchItem)
+
+
+2)	Write a method that sorts an array. You are going to sort the array by using the following algorithm:
+
+a) Find the smallest element within the array between index numbers 0 and n
+ Once you find the smallest element, place it into index=0
+	b) Find the next smallest element within the array between index numbers 1 and n
+Once you find the second smallest element, place it into index=1
+	c) Find the next smallest element within the array between index numbers 2 and n
+Once you find the third smallest element, place it into index=2
+	d) Repeat until you find the last element in the array and place it into index = n
+
+
+Here's an example of the first two iterations:
+
+Blue : unsorted part of the array
+Orange : current smallest
+Green: after you relocate the smallest in the array
+
+  
+
+
+3)	Write a C++ method that generates a multiplication table and stores it in a 2D array.
+
+table[0][0] contains 1*1
+table[0][1] contains 1*2
+table[0][2] contains 1*3
+..
+..
+table[9][9] contains 10*10
+
+4)	Write a method that it checks if a given string is a palindrome. If it is returns true, otherwise returns false
+
+
+5)	Write a method called reverseString that uses the append function to build the reversed string. If string is “hello” your method will return reversed version “olleh”.
+
+
+6)	Create a namespace myMath. Define two methods add and sub in your namespace that adds and subtracts two square matrices whose size is 3x3 (3 rows, 3 cols). Call the methods in main.
+
+
+

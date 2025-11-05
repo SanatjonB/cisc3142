@@ -1,0 +1,154 @@
+1)	A company has six salespeople. Every month, they go on road trips to sell the company’s product. At the end of each month, the total sales for each salesperson, together with that salesperson’s ID and the month, is recorded in a file. At the end of each year, the manager of the company wants to see this report in this following tabular format:
+
+ 
+
+
+In this report, QT1 stands for quarter 1 (months 1 to 3), QT2 for quarter 2 (months 4 to 6), QT3 for quarter 3 (months 7 to 9), and QT4 for quarter 4 (months 10 to 12).
+
+The salespeople’s IDs are stored in one file; the sales data is stored in another file. The sales data is in the following form:
+
+ 
+
+
+Furthermore, the sales data is in no particular order; it is not ordered by ID.
+
+A sample sales data is:
+
+ 
+
+Write a program that produces the output in the specified format.
+
+Input:	 One file containing each salesperson’s ID and a second file containing the sales data.
+Output: A file containing the annual sales report in the above format.
+
+
+
+Problem Analysis and Algorithm Design:
+
+Based on the problem’s requirements, it is clear that the main components for each salesperson are the salesperson’s ID, quarterly sales amount, and total annual sales amount. Because the components are of different types, we can group them with the help of a struct , defined as follows:
+
+salesPerson {
+ID
+Quarter[4]
+totalSale
+
+}
+
+
+Because there are six sales people, we use an array of six components, wherein each component is of type salesPerson 
+
+Because the program requires us to find the company’s total sales for each quarter, we need an array of four components to store the data. Note that this data will be used to determine the quarter in which the maximum sales were made. Therefore, the program also needs the following array:
+
+totalSaleByQuarter[4]
+
+
+
+ 
+
+The first step of the program is to read the salespeople’s IDs into the array salesPersonList and initialize the quarterly sales and total sales for each salesperson to 0. After this step, the array salesPersonList is as shown below:
+ 
+
+The next step is to process the sales data. Processing the sales data is quite straightforward. For each entry in the file containing the sales data:
+
+o	Read the salesperson’s ID, month, and sale amount for the month.
+o	Search the array salesPersonList to locate the component corresponding to this salesperson.
+o	Determine the quarter corresponding to the month.
+o	Update the sales for the quarter by adding the sale amount for the month.
+o	Once the sales data file is processed:
+•	Calculate the total sales by salesperson.
+•	Calculate the total sales by quarter.
+•	Print the report.
+
+This discussion translates into the following algorithm:
+
+o	Initialize the array salesPersonList.
+o	Process the sales data.
+o	Calculate the total sales by quarter.
+o	Calculate the total sales by salesperson.
+o	Print the report.
+o	Calculate and print the maximum sales by salesperson.
+o	Calculate and print the maximum sales by quarter.
+
+To reduce the complexity of the main program, let us write a separate function for each of these seven steps:
+
+Complete method list:
+
+void initialize(ifstream& indata, salesPersonRec list[], int listSize);
+void getData(ifstream& infile, salesPersonRec list[], int listSize);
+void saleByQuarter(salesPersonRec list[], int listSize, double totalByQuarter[]);
+void totalSaleByPerson(salesPersonRec list[], int listSize);
+void printReport(ofstream& outfile, salesPersonRec list[], int listSize, double saleByQuarter[]);
+void maxSaleByPerson(ofstream& outData, salesPersonRec list[], int listSize);
+void maxSaleByQuarter(ofstream& outData, double saleByQuarter[]);
+
+a)	 Function initialize : This function reads the salesperson’s ID from the input file and stores the salesperson’s ID in the array salesPersonList. It also initializes the quarterly sales amount and the total sales amount for each salesperson to 0.
+
+b)	Function getData: This function reads the sales data from the input file and stores the appropriate information in the array salesPersonList. The algorithm for this function is as follows:
+
+Read the salesperson’s ID, month, and sales amount for the month.
+
+Search the array salesPersonList to locate the component corresponding to the salesperson. (Because the salespeople’s IDs are not sorted, we will use a sequential search to search the array.)
+
+Determine the quarter corresponding to the month.
+
+Update the sales for the quarter by adding the sales amount for the month.
+
+Suppose that the entry read is:
+
+57373 2 350
+
+Here, the salesperson’s ID is 57373, the month is 2, and the sales amount is 350. Suppose that the array salesPersonList is as shown below:
+
+
+ 
+
+Now, ID 57373 corresponds to the array component salesPersonList[3], and month 2 corresponds to quarter 1. Therefore, you add 350 to 354.80 to get the new amount, 704.80. After processing this entry, the array salesPersonList is as shown below: 
+
+
+ 
+
+c)	Function saleByQuarter : This function finds the company’s total sales for each quarter. To find the total sales for each quarter, we add the sales amount of each salesperson for that quarter. Clearly, this function must have access to the array salesPersonList and the array totalSaleByQuarter. This function also needs to know the number of rows in each array. Thus, this function has three parameters.
+
+d)	Function saleByQuarter: This function finds the company’s total sales for each quarter. To find the total sales for each quarter, we add the sales amount of each salesperson for that quarter. Clearly, this function must have access to the array salesPersonList and the array totalSaleByQuarter. This function also needs to know the number of rows in each array. Thus, this function has three parameters. 
+
+e)	Function printReport : This function prints the annual report in the specified format. The algorithm in pseudocode is as follows:
+
+o	Print the heading—that is, the first three lines of output.
+o	Print the data for each salesperson.
+o	Print the last line of the table.
+o	Note that the next two functions will produce the final two lines of output.
+
+Clearly, the printReport function must have access to the array salesPersonList and the array totalSaleByQuarter. Also, because the output will be stored in a file, this function must have access to the ofstream variable associated with the output file. Thus, this function has four parameters: a parameter corresponding to the array salesPersonList, a parameter corresponding to the array totalSaleByQuarter, a parameter specifying the size of the array, and a parameter corresponding to the ofstream variable.
+
+
+f)	Function maxSaleByPerson : This function prints the name of the salesperson who produces the maximum sales amount. To identify this salesperson, we look at the sales total for each salesperson and find the largest sales amount. Because each employee’s sales total is maintained in the array salesPersonList, this function must have access to the array salesPersonList. Also, because the output will be stored in a file, this function must have access to the ofstream variable associated with the output file. Therefore, this function has three parameters: a parameter corresponding to the array salesPersonList, a parameter specifying the size of this array, and a parameter corresponding to the output file.
+
+g)	Function maxSaleByQuarter : This function prints the quarter in which the maximum sales were made. To identify this quarter, we look at the total sales for each quarter and find the largest sales amount. Because the sales total for each quarter is in the array totalSaleByQuarter, this function must have access to the array totalSaleByQuarter. Also, because the output will be stored in a file, this function must have access to the ofstream variable associated with the output file. Therefore, this function has two parameters: a parameter corresponding to the array totalSaleByQuarter and a parameter corresponding to the output file.
+
+We are now ready to write the algorithm for the function main.
+
+Main Algorithm
+
+•	Declare the variables.
+•	Prompt the user to enter the name of the file containing the salesperson’s ID data.
+•	Read the name of the input file.
+•	Open the input file.
+•	If the input file does not exist, exit the program.
+•	Initialize the array salesPersonList. Call the function initialize.
+•	Close the input file containing the salesperson’s ID data and clear the input stream.
+•	Prompt the user to enter the name of the file containing the sales data.
+•	Read the name of the input file.
+•	Open the input file.
+•	If the input file does not exist, exit the program.
+•	Prompt the user to enter the name of the output file.
+•	Read the name of the output file.
+•	Open the output file.
+
+•	To output floating-point numbers in a fixed decimal format with the decimal point and trailing zeroes, set the manipulators fixed and showpoint. Also, to output floating-point numbers to two decimal places, set the precision to two decimal places.
+•	Process the sales data. Call the function getData.
+•	Calculate the total sales by quarter. Call the function saleByQuarter.
+•	Calculate the total sales for each salesperson. Call the function totalSaleByPerson.
+•	Print the report in a tabular format. Call the function printReport.
+•	Find and print the salesperson who produces the maximum sales for the year. Call the function maxSaleByPerson.
+•	Find and print the quarter that produces the maximum sales for the year. Call the function maxSaleByQuarter.
+•	Close the files.

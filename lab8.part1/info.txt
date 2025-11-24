@@ -1,0 +1,38 @@
+Assignment: Bank Account Management System
+Implement a simple bank account management system using classes. The class should handle basic operations such as setting the account holder's name, depositing money, withdrawing money, and checking the account balance. The assignment should not involve constructors and should have all member functions defined within the class declaration.
+1.	Class Definition:
+o	Create a class named BankAccount that contains:
+	Private member variables:
+	std::string accountHolder: to store the account holder's name.
+	double balance: to store the account balance (initialized to 0).
+	Public member functions:
+	void setAccountHolder(const std::string& name): to set the name of the account holder.
+	void deposit(double amount): to deposit an amount into the account (ensure the amount is positive).
+	void withdraw(double amount): to withdraw an amount from the account (ensure sufficient funds and that the amount is positive).
+	void checkBalance() const: to display the account holder's name and current balance.
+2.	Main Program:
+o	In the main function:
+	Prompt the user to enter the account holder's name.
+	Make an initial deposit of a fixed amount (e.g., $1000).
+	Allow the user to:
+	Deposit additional funds.
+	Withdraw funds, ensuring proper checks for sufficient balance.
+	Check the balance after each transaction.
+3.	Output Format:
+o	Clearly display the results of each operation, including:
+	Confirmation of deposits and withdrawals.
+	The current balance after each operation.
+Example Output
+When the program is executed, the expected output format should resemble the following:
+Enter account holder's name: John Doe
+Initial deposit of $1000. New balance: 1000
+Account holder: John Doe, Balance: 1000
+Enter amount to deposit: 500
+500 deposited. New balance: 1500
+Account holder: John Doe, Balance: 1500
+Enter amount to withdraw: 200
+200 withdrawn. New balance: 1300
+Account holder: John Doe, Balance: 1300
+Submission
+•	Submit a single .cpp file containing the entire implementation (both the class definition and the main function).
+

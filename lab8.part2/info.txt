@@ -1,0 +1,90 @@
+1. Consider the following class definition:
+
+class productType //Line 1
+{ //Line 2
+         public: //Line 3
+productType(); //Line 4
+productType(int, double, double); //Line 5
+productType(string, int, double, double); //Line 6
+productType(string, string, string, int, double, double); //Line 7
+void set(string, string, string, int, double, double); //Line 8
+void print() const; //Line 9
+void setQuantitiesInStock(int x);  //Line 10
+void updateQuantitiesInStock(int x); //Line 11
+int getQuantitiesInStock() const; //Line 12
+void setPrice(double x); //Line 13
+double getPrice() const; //Line 14
+void setDiscount(double d); //Line 15
+double getDiscount() const; //Line 16
+
+         private: //Line 17
+
+string productName; //Line 18
+string id; //Line 19
+string manufacturer; //Line 20
+int quantitiesInStock; //Line 21
+double price; //Line 22
+double discount; //Line 23
+};
+
+
+a.	Give the line number containing the constructor that is executed in each of the following declarations. (In other words, which constructors will be invoked if the following objects are created. You will not write any code here just write line numbers to corresponding objects)
+
+i. productType product1;
+ii. productType product2("Microwave", "M3562", "GeneralPool", 35, 175.00, 0.1);
+iii. productType product3("D1290", 25, 375.00, 0.05);
+iv. productType product4(10, 8.50, 0.2);
+
+b. Write the definition of the constructor in Line 4 so that the instance variables are initialized to "", "", "", 0, 0.0, and 0.0, respectively.
+
+c. Write the definition of the constructor in Line 5 so that the string instance variables are initialized to "", and the other instance variables are initialized according to the parameters. Instance variables quantitiesInStock, price, and discount must be nonnegative.
+
+d. Write the definition of the constructor in Line 6 so that the instance variables productName and manufacturer are initialized to the empty string, instance variable id is initialized according to the first parameter, and the remaining instance variables are initialized according to the last three parameters. Instance variables quantitiesInStock, price, and discount must be nonnegative.
+
+e. Write the definition of the constructor in Line 7 so that the instance variables are initialized according to the parameters. Instance variables quantitiesInStock, price, and discount must be nonnegative.
+
+
+2. Consider the definition of the class productType as given in Exercise 1.
+
+
+a. Write the definition of the function set so that instance variables are set according to the paramaters. Instance variables quantitiesInStock, price, and discount must be nonnegative.
+
+b. Write the definition of the function print to output the values of the instance variables.
+
+c. Write the definition of the function setQuantitiesInStock to set the value of the instance variable quantitiesInStock according to the parameter.
+
+d. Write the definition of the function updateQuantitiesInStock to update the value of instance variable quantitiesInStock by adding the value of the parameter.
+e. Write the definition of the function getQuantitiesInStock to return the value of instance variable quantitiesInStock.
+f. Write the definition of the function setPrice to set the value of the instance variable price according to the parameter.
+g. Write the definition of the function getPrice to return the value of the instance variable price.
+h. Write the definition of the function setDiscount to set the value of the instance variable discount according to the parameter.
+i. Write the definition of the function getDiscount to return the value of the instance variable discount.
+1
+
+
+3)  Consider the definition of the class productType as given in Exercise 1. Which function members are accessors, and which are mutators?
+
+Accessors:
+
+
+Mutators:
+
+
+4)  Consider the definition of the class productType as given in Exercise 1.
+
+
+a)	Create two objects prod1, prod2. Initialize prod1 with default constructor. Initialize prod2 with the following parameters :  Apple", "123", "Family Farm", 100, 5.99, 12 
+
+b)	Set prod1 with the values "Pear", "124" , "Big Farm" , 120, 3.99, 0
+
+c)	Print values of prod1
+
+d)	Update Quantities of prod1 in Stock by 10
+
+e)	Print the quantities of prod1
+
+f)	Change price of prod1 to 15.5
+
+g)	Print price of prod1
+
+h)	Print all parameters of prod1 

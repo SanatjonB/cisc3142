@@ -1,0 +1,103 @@
+In this exercise, you will design various classes and write a program to computerize the billing system of a hospital.
+
+Design the class doctorType, inherited from the class personType, with an additional data member to store a doctor’s speciality. Add appropriate constructors and member functions to initialize, access, and manipulate the data members. (constructors, setters, getters)
+
+Design the class billType with data members to store a patient’s ID and a patient’s hospital charges, such as pharmacy charges for medicine, doctor’s fee, and room charges. Add appropriate constructors and member functions to initialize, access, and manipulate the data members. (constructors, setters, getters)
+
+
+Design the class patientType, inherited from the class personType, with additional data members to store a patient’s ID, age, date of birth, attending physician’s name, the date when the patient was admitted in the hospital, and the date when the patient was discharged from the hospital. (Use the class dateType to store the date of birth, admit date, discharge date, and the class doctorType to store the attending physician’s name.) Add appropriate constructors and member functions to initialize, access, and manipulate the data members. (constructors, setters, getters)
+
+
+Write a program to test your classes.
+
+
+Reminder for personType and dateType:
+
+
+#ifndef H_personType
+#define H_personType
+
+#include <string>
+ 
+using namespace std; 
+
+class personType
+{
+public:
+    void print() const;
+       //Function to output the first name and last name
+       //in the form firstName lastName.
+  
+    void setName(string first, string last);
+       //Function to set firstName and lastName according 
+       //to the parameters.
+       //Postcondition: firstName = first; lastName = last
+
+    string getFirstName() const;
+       //Function to return the first name.
+       //Postcondition: The value of the data member firstName
+	   //               is returned.
+
+    string getLastName() const;
+       //Function to return the last name.
+       //Postcondition: The value of the data member lastName
+	   //               is returned.
+
+    personType(string first = "", string last = "");
+       //constructor
+       //Sets firstName and lastName according to the parameters.
+       //The default values of the parameters are empty strings.
+       //Postcondition: firstName = first; lastName = last  
+
+ private:
+    string firstName; //variable to store the first name
+    string lastName;  //variable to store the last name
+};
+
+
+
+
+#ifndef dateType_H
+#define dateType_H
+   
+class dateType
+{
+public:
+    void setDate(int month, int day, int year);
+      //Function to set the date.
+      //The member variables dMonth, dDay, and dYear are set  
+      //according to the parameters.
+      //Postcondition: dMonth = month; dDay = day;
+      //               dYear = year
+
+    int getDay() const;
+      //Function to return the day.
+      //Postcondition: The value of dDay is returned.
+
+    int getMonth() const;
+      //Function to return the month.  
+      //Postcondition: The value of dMonth is returned.
+
+    int getYear() const;
+      //Function to return the year.     
+      //Postcondition: The value of dYear is returned.
+
+    void printDate() const;
+      //Function to output the date in the form mm-dd-yyyy.
+
+    dateType(int month = 1, int day = 1, int year = 1900);
+      //Constructor to set the date
+      //The member variables dMonth, dDay, and dYear are set 
+      //according to the parameters.
+      //Postcondition: dMonth = month; dDay = day; dYear = year;
+      //               If no values are specified, the default 
+      //               values are used to initialize the member
+      //               variables.
+
+private:
+    int dMonth; //variable to store the month
+    int dDay;   //variable to store the day
+    int dYear;  //variable to store the year
+};
+
+#endif
